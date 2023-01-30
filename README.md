@@ -52,4 +52,4 @@ Maybe this tool will provide a webAPI, and sinply http request will control the 
 ---
 ## License
 
-License LGPL v3 (Development with Qt Community version)
+License GPL v3 (Development with Qt Community version)
