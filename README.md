@@ -1,10 +1,14 @@
-# QtControlAppleScript_test
+# SHT (SmartHomeTools) Chrome Player Remoter
+
+## Source
+
+  After some initial test of Applescript control google chrome player in last repo [QtControlAppleScript_test](https://github.com/uwaudio/QtControlAppleScript_test). I decide open a new repo to continue the more features.
 
 ## Motivation
 
   Started this project because while using [Home Assistant](https://github.com/home-assistant) to control my home, I found that I was missing a device for simple control of my playback computer. Since I use a Mac Mini in my home that is directly connected to the NEC projector, I can currently only switch the NEC projector on and off with Home Assistant, but not the player (my Mac Mini).
 
-  So I decided to do some initial exploration of controlling my player in a simple way.
+  So I decided to do some tools of controlling my player in a simple way.
 
 ---
 ## Technical Details
@@ -21,23 +25,11 @@
 
 ---
 ## Release Note
+~~[download v0.2.1-alpha](https://github.com/uwaudio/QtControlAppleScript_test/releases/tag/v0.2.1-alpha)~~
 
-### V0.2.2 
+### V0.3.1 (initial version)
 
-- Add special controls for Bilibili Live platform. 
-
-[download v0.2.2-alpha](https://github.com/uwaudio/QtControlAppleScript_test/releases/tag/v0.2.2-alpha)
-
-### V0.2.1 
-
-- Add more button, to provide more control functions.    
-- Add special controls for YouTube platform. 
-
-[download v0.2.1-alpha](https://github.com/uwaudio/QtControlAppleScript_test/releases/tag/v0.2.1-alpha)
-
-### V0.0.1 (initial version)
-
-- Only one button, used to verify that Qt can control applications in macOS through AppleScript.
+- Add more features
 
 
 ---
