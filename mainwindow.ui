@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>458</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QtControlAppleScript_test</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>581</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="mailGridLayout">
+     <item row="2" column="2">
+      <widget class="QPushButton" name="btn_up">
+       <property name="text">
+        <string>Vol+(&quot;Up&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="lb_youtube">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>19</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Youtube Control</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="lb_general">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>19</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>General Control</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="3">
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="btn_down">
+       <property name="text">
+        <string>Vol-(&quot;Down&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="3" column="1">
+      <widget class="QPushButton" name="btn_left">
+       <property name="text">
+        <string>&lt;&lt; (&quot;Left&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="2">
+      <widget class="QLabel" name="lb_copyright">
+       <property name="text">
+        <string>By: uwaudio</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+       <property name="openExternalLinks">
+        <bool>true</bool>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::TextBrowserInteraction</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="btn_playPause">
+       <property name="text">
+        <string>Play / Pause (&quot;Space&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="3">
+      <widget class="QPushButton" name="btn_y2b_theater">
+       <property name="text">
+        <string>Theater Mode (&quot;T&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QPushButton" name="btn_y2b_mute">
+       <property name="text">
+        <string>Mute (&quot;M&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="3">
+      <widget class="QPushButton" name="btn_y2b_fullscreen">
+       <property name="text">
+        <string>Fullscreen (&quot;F&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QPushButton" name="btn_y2b_nextVideo">
+       <property name="text">
+        <string>Next Video (&quot;Shift+N&quot;)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1" colspan="3">
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="3">
+      <widget class="QLabel" name="lb_license">
+       <property name="text">
+        <string>License: LGPL v3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1" colspan="3">
+      <widget class="QLabel" name="lb_github">
+       <property name="text">
+        <string>Github: &lt;a href=&quot;https://github.com/uwaudio/QtControlAppleScript_test&quot;&gt;https://github.com/uwaudio/QtControlAppleScript_test&lt;/a&gt;</string>
+       </property>
+       <property name="openExternalLinks">
+        <bool>true</bool>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::TextBrowserInteraction</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QPushButton" name="btn_right">
+       <property name="text">
+        <string>&gt;&gt; (&quot;Right&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1">
+      <widget class="QLabel" name="lb_version">
+       <property name="text">
+        <string>Version: V0.2.2(build16)</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+       <property name="openExternalLinks">
+        <bool>true</bool>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::TextBrowserInteraction</set>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1" colspan="3">
+      <widget class="Line" name="line_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLabel" name="lb_youtube_2">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>19</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Bilibili Live Control</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="2">
+      <widget class="QPushButton" name="btn_bLive_stopLive">
+       <property name="text">
+        <string>Stop (&quot;Cmd+W&quot;)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="3">
+      <widget class="QPushButton" name="btn_bLive_restartLast">
+       <property name="text">
+        <string>Restart Last(&quot;Cmd+Shift+T&quot;)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1" colspan="3">
+      <widget class="Line" name="line_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
