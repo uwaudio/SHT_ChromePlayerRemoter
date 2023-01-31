@@ -13,7 +13,7 @@
 ---
 ## Technical Details
 
-  A simple test of [Qt](https://github.com/qt), using Apple Script to simulate keyboard control. A part of my SmartHomeTools.
+  A small tool made of [Qt](https://github.com/qt), using Apple Script to simulate keyboard control. A part of my SmartHomeTools.
 
   In AppleScript part, simply using the System Event's "KeyStroke" to simulate a keyboard activity.
   And then, tell process Google Chrome. So that if you are already watching a Video on web site. It can control the video play/pause. 
@@ -21,7 +21,6 @@
 
   (for all dear contributors, I have not test on NetFlix. If you have NetFlix account and prefer to test this tool, please tell me any result or issues, thanks a lot ! )
 
-![image](https://user-images.githubusercontent.com/49844552/214701499-1d1df00f-a369-4dd3-ab90-30500459301a.png)
 
 ---
 ## Release Note
@@ -33,7 +32,7 @@
 
 
 ---
-## In feature
+## In progress
 
 Next step will create the remote version.    
 Maybe this tool will provide a webAPI, and sinply http request will control the play / pause instead using button.
