@@ -1,5 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include <QProcess>
 
 #include <QMainWindow>
 
@@ -51,6 +52,8 @@ private:
     QString osascript;
     QStringList processArguments;
     QString aScript;
+
+    QProcess p;
 
     QStringList myAppleScriptKeyList;
 

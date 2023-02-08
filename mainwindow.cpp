@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    myAppleScriptKeyList.clear();
+    p.close();
     delete ui;
 }
 
@@ -263,7 +265,7 @@ void MainWindow::initialMyAppleScriptList()
 
 void MainWindow::runAppleScript(QString _qstr)
 {
-    QProcess p;
+//    QProcess p;
     p.start(osascript, processArguments);
     p.write(_qstr.toUtf8());
     p.closeWriteChannel();
