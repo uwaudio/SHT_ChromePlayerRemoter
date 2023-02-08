@@ -16,7 +16,7 @@ public:
     ~MainWindow();
 
 private slots:
-//    void on_btn_test_clicked();
+
 
     void on_btn_playPause_clicked();
 
@@ -40,6 +40,10 @@ private slots:
 
     void on_btn_bLive_restartLast_clicked();
 
+    void on_cBox_modeSelect_currentIndexChanged(int index);
+
+    void on_cBox_nodeSelect_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
 
@@ -47,6 +51,20 @@ private:
     QString osascript;
     QStringList processArguments;
     QString aScript;
+
+    QStringList myAppleScriptKeyList;
+
+    qint8 isLocalMode;
+    qint8 isServerMode;
+
+    void initialMyAppleScriptList();
+
+    void runAppleScript(QString);
+    void controlActions(QString);
+
+    QString generateMyAppleScript(int);
+
+
 
 };
 #endif // MAINWINDOW_H

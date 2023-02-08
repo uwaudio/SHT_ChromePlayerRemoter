@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>458</height>
+    <width>647</width>
+    <height>539</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,19 +22,26 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>581</width>
-      <height>371</height>
+      <width>617</width>
+      <height>449</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="mailGridLayout">
-     <item row="2" column="2">
-      <widget class="QPushButton" name="btn_up">
+     <item row="6" column="1">
+      <widget class="QPushButton" name="btn_left">
        <property name="text">
-        <string>Vol+(&quot;Up&quot; key)</string>
+        <string>&lt;&lt; (&quot;Left&quot; key)</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
+     <item row="1" column="1">
+      <widget class="QLabel" name="lb_modeSelect">
+       <property name="text">
+        <string>Mode select :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
       <widget class="QLabel" name="lb_youtube">
        <property name="maximumSize">
         <size>
@@ -47,54 +54,28 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="lb_general">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>19</height>
-        </size>
-       </property>
+     <item row="10" column="3">
+      <widget class="QPushButton" name="btn_y2b_theater">
        <property name="text">
-        <string>General Control</string>
+        <string>Theater Mode (&quot;T&quot; key)</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1" colspan="3">
+     <item row="9" column="2">
+      <widget class="QPushButton" name="btn_y2b_nextVideo">
+       <property name="text">
+        <string>Next Video (&quot;Shift+N&quot;)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" colspan="3">
       <widget class="Line" name="line_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
-     <item row="4" column="2">
-      <widget class="QPushButton" name="btn_down">
-       <property name="text">
-        <string>Vol-(&quot;Down&quot; key)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="11" column="1">
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="btn_left">
-       <property name="text">
-        <string>&lt;&lt; (&quot;Left&quot; key)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="12" column="2">
+     <item row="15" column="2">
       <widget class="QLabel" name="lb_copyright">
        <property name="text">
         <string>By: uwaudio</string>
@@ -110,79 +91,82 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="btn_playPause">
+     <item row="1" column="2">
+      <widget class="QComboBox" name="cBox_modeSelect">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>Remote Mode</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Local Mode</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLabel" name="lb_general">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>19</height>
+        </size>
+       </property>
        <property name="text">
-        <string>Play / Pause (&quot;Space&quot; key)</string>
+        <string>General Control</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="3">
-      <widget class="QPushButton" name="btn_y2b_theater">
-       <property name="text">
-        <string>Theater Mode (&quot;T&quot; key)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="2">
+     <item row="10" column="2">
       <widget class="QPushButton" name="btn_y2b_mute">
        <property name="text">
         <string>Mute (&quot;M&quot; key)</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="3">
-      <widget class="QPushButton" name="btn_y2b_fullscreen">
+     <item row="1" column="3">
+      <widget class="QComboBox" name="cBox_nodeSelect">
+       <item>
+        <property name="text">
+         <string>Client Side</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Server Side</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="12" column="3">
+      <widget class="QPushButton" name="btn_bLive_restartLast">
        <property name="text">
-        <string>Fullscreen (&quot;F&quot; key)</string>
+        <string>Restart Last(&quot;Cmd+Shift+T&quot;)</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="2">
-      <widget class="QPushButton" name="btn_y2b_nextVideo">
+     <item row="5" column="2">
+      <widget class="QPushButton" name="btn_up">
        <property name="text">
-        <string>Next Video (&quot;Shift+N&quot;)</string>
+        <string>Vol+(&quot;Up&quot; key)</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="1" colspan="3">
-      <widget class="Line" name="line">
+     <item row="13" column="1" colspan="3">
+      <widget class="Line" name="line_4">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
-     <item row="12" column="3">
-      <widget class="QLabel" name="lb_license">
-       <property name="text">
-        <string>License: LGPL v3</string>
-       </property>
-      </widget>
-     </item>
-     <item row="13" column="1" colspan="3">
-      <widget class="QLabel" name="lb_github">
-       <property name="text">
-        <string>Github: &lt;a href=&quot;https://github.com/uwaudio/QtControlAppleScript_test&quot;&gt;https://github.com/uwaudio/QtControlAppleScript_test&lt;/a&gt;</string>
-       </property>
-       <property name="openExternalLinks">
-        <bool>true</bool>
-       </property>
-       <property name="textInteractionFlags">
-        <set>Qt::TextBrowserInteraction</set>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="3">
-      <widget class="QPushButton" name="btn_right">
-       <property name="text">
-        <string>&gt;&gt; (&quot;Right&quot; key)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="12" column="1">
+     <item row="15" column="1">
       <widget class="QLabel" name="lb_version">
        <property name="text">
-        <string>Version: V0.2.2(build16)</string>
+        <string>Version: V0.3.1(build22)</string>
        </property>
        <property name="textFormat">
         <enum>Qt::RichText</enum>
@@ -195,14 +179,42 @@
        </property>
       </widget>
      </item>
-     <item row="8" column="1" colspan="3">
+     <item row="12" column="2">
+      <widget class="QPushButton" name="btn_bLive_stopLive">
+       <property name="text">
+        <string>Stop (&quot;Cmd+W&quot;)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="3">
+      <widget class="QPushButton" name="btn_y2b_fullscreen">
+       <property name="text">
+        <string>Fullscreen (&quot;F&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="3">
+      <widget class="QLabel" name="lb_license">
+       <property name="text">
+        <string>License: LGPL v3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="3">
+      <widget class="QPushButton" name="btn_right">
+       <property name="text">
+        <string>&gt;&gt; (&quot;Right&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1" colspan="3">
       <widget class="Line" name="line_3">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
-     <item row="9" column="1">
+     <item row="12" column="1">
       <widget class="QLabel" name="lb_youtube_2">
        <property name="maximumSize">
         <size>
@@ -215,24 +227,57 @@
        </property>
       </widget>
      </item>
-     <item row="9" column="2">
-      <widget class="QPushButton" name="btn_bLive_stopLive">
+     <item row="16" column="1" colspan="3">
+      <widget class="QLabel" name="lb_github">
        <property name="text">
-        <string>Stop (&quot;Cmd+W&quot;)</string>
+        <string>Github: &lt;a href=&quot;https://github.com/uwaudio/SHT_ChromePlayerRemoter&quot;&gt;https://github.com/uwaudio/SHT_ChromePlayerRemoter&lt;/a&gt;</string>
+       </property>
+       <property name="openExternalLinks">
+        <bool>true</bool>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::TextBrowserInteraction</set>
        </property>
       </widget>
      </item>
-     <item row="9" column="3">
-      <widget class="QPushButton" name="btn_bLive_restartLast">
-       <property name="text">
-        <string>Restart Last(&quot;Cmd+Shift+T&quot;)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="1" colspan="3">
-      <widget class="Line" name="line_4">
+     <item row="8" column="1" colspan="3">
+      <widget class="Line" name="line">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QPushButton" name="btn_playPause">
+       <property name="text">
+        <string>Play / Pause (&quot;Space&quot; key)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" colspan="3">
+      <widget class="Line" name="line_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="7" column="2">
+      <widget class="QPushButton" name="btn_down">
+       <property name="text">
+        <string>Vol-(&quot;Down&quot; key)</string>
        </property>
       </widget>
      </item>
@@ -244,7 +289,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>647</width>
      <height>22</height>
     </rect>
    </property>
