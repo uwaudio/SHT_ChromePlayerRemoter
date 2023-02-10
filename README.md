@@ -26,6 +26,11 @@
 ## Release Note
 ~~[download v0.2.1-alpha](https://github.com/uwaudio/QtControlAppleScript_test/releases/tag/v0.2.1-alpha)~~
 
+
+### V0.3.2
+
+- Add API server function. So it support directly use the http request to control.
+
 ### V0.3.1 (initial version)
 
 - Add more features
