@@ -46,7 +46,8 @@ Maybe this tool will provide a webAPI, and sinply http request will control the 
 ## Development Environment
 
 - Apple macOS 10.15.7 Catalina  
-- Qt Community Version (Clang 6.2.4)
+- Qt Community Version (Clang 6.4.2)
+-- Remark ! Since Qt 6.4, Qt += httpserver has been supported ! 
 
 ---
 ## License
