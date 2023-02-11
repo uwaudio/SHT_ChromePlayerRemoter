@@ -46,12 +46,12 @@ Maybe this tool will provide a webAPI, and sinply http request will control the 
 ---
 ## System Requirement
 
-- Apple macOS 10.15.7 Catalina (only test on this version)  
+- Apple macOS 10.15.7 Catalina or macOS 13.1 Ventura (only test on these 2 version) (intel silicon only)  
 - Google Chrome version 108 or newer version
 
 ## Development Environment
 
-- Apple macOS 10.15.7 Catalina  
+- Apple macOS 10.15.7 Catalina (intel silicon)  
 - Qt Community Version (Clang 6.4.2)
 -- Remark ! Since Qt 6.4, Qt += httpserver has been supported ! 
 
