@@ -24,8 +24,9 @@
 
 ---
 ## Release Note
-~~[download v0.2.1-alpha](https://github.com/uwaudio/QtControlAppleScript_test/releases/tag/v0.2.1-alpha)~~
+[download v0.3.2-alpha](https://github.com/uwaudio/QtControlAppleScript_test/releases/tag/v0.2.1-alpha)~~
 
+![image](https://user-images.githubusercontent.com/49844552/218206290-5856b7d4-3034-4301-bb52-67c038e36f9c.png)
 
 ### V0.3.2
 
