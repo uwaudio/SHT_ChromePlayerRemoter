@@ -21,6 +21,152 @@
 
   (for all dear contributors, I have not test on NetFlix. If you have NetFlix account and prefer to test this tool, please tell me any result or issues, thanks a lot ! )
 
+---
+## User Guide
+This software is used as a part of my own SmartHome Tool with [Home Assistant](https://github.com/home-assistant).
+
+### A - Deploy Server Side
+
+1. Download .dmg package from last release version.
+
+2. Mount .dmg image on macOS(which you prefer to control) and drag .app file to your local application folder (or anywhere you want)
+
+3. Open this .app file
+
+4. Open your Chrome and choose your favorite Youtube video to test.
+
+5. Click "Play/Pause" to test if everything runs well. 
+
+6. Normally you will be noticed by macOS, allow this application to control (or it will not work)
+
+7. If the video has been successful play/pause controlled. You can test other functions if those buttons works as description.
+
+8. Change the mode from "Local mode" to "Remote mode", and select "Server Side" instead of "Client Side"
+
+9. Generally, you will be noticed to allow income trafic of firewall of macOS.
+
+10. Then Open terminal.app, use code below to test if the Server side has been successfully deployed or not.
+```
+curl http://localhost:16250/run/0/
+```
+11. If the video in Chrome has been successful play/pause controlled. The deploy server side part finished.
+
+### B - Deploy Control Side (in HomeAssistant)
+
+1. It is assumed that HomeAssistant already exists on your home LAN and is working fine.
+
+2. Add code below to your configuration.yaml file (or any of your custom .yaml file)
+```
+# commandline
+shell_command:
+    smt_playorpause: curl http://Your-ServerSide-IPAddress:16250/run/0/
+    smt_rwd: curl http://Your-ServerSide-IPAddress:16250/run/1/
+    smt_fwd: curl http://Your-ServerSide-IPAddress:16250/run/2/
+    smt_volup: curl http://Your-ServerSide-IPAddress:16250/run/3/
+    smt_voldown: curl http://Your-ServerSide-IPAddress:16250/run/4/
+    smt_nextvideo: curl http://Your-ServerSide-IPAddress:16250/run/5/
+    smt_fullscreen: curl http://Your-ServerSide-IPAddress:16250/run/6/
+    smt_theater: curl http://Your-ServerSide-IPAddress:16250/run/7/
+    smt_volmute: curl http://Your-ServerSide-IPAddress:16250/run/8/
+    smt_closetab: curl http://Your-ServerSide-IPAddress:16250/run/9/
+    smt_reopentab: curl http:/Your-ServerSide-IPAddress:16250/run/10/
+```
+
+3. Save & Reload configuration of your Home Assistant
+
+4. Than add each command in "Script" part of your Home Assistant. Or if you prefer to use YAML to add "Script", try code below
+```
+#an example for Play/Pause script
+    alias: Play/Pause
+    sequence:
+      - service: shell_command.smt_playorpause
+        data: {}
+    mode: single
+    icon: mdi:play-pause
+```
+
+5. Add new Script into your lovelace. So that you can touch and control !
+![My-Lovelace as example](https://user-images.githubusercontent.com/49844552/218283386-388c45a0-b73d-44d5-9b6d-933d19e9b3a5.png)
+```
+#yaml for lovelace above
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    cards:
+      - show_name: false
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_rewind
+      - show_name: false
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_playorpause
+      - show_name: false
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_fwd
+  - type: horizontal-stack
+    cards:
+      - show_name: false
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_volumeminus
+      - show_name: false
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_volumeplus
+      - show_name: false
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_volumemute
+  - type: horizontal-stack
+    cards:
+      - show_name: false
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_theatermode
+      - show_name: false
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_playerfullscreen
+      - show_name: false
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_nextvideo
+  - type: horizontal-stack
+    cards:
+      - show_name: true
+        show_icon: false
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.smt_closetab
+      - show_name: true
+        show_icon: false
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.reopentab
+
+```
 
 ---
 ## Release Note
