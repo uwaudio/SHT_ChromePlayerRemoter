@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QProcess>
+#include <QHttpServerRouter>
+#include <QHttpServerRouterRule>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,15 +16,26 @@ MainWindow::MainWindow(QWidget *parent)
 
     isLocalMode = 1;
     isServerMode = 0;
+    ui->cBox_nodeSelect->setEnabled(0);
 
     initialMyAppleScriptList();
+
+
 }
+
+
 
 MainWindow::~MainWindow()
 {
     myAppleScriptKeyList.clear();
     p.close();
+    myHttpServer->deleteLater();
     delete ui;
+}
+
+void MainWindow::controlActionByHttp(int _i)
+{
+    controlActions(generateMyAppleScript(_i));
 }
 
 
@@ -239,12 +252,21 @@ void MainWindow::on_btn_bLive_restartLast_clicked()
 void MainWindow::on_cBox_modeSelect_currentIndexChanged(int index)
 {
     isLocalMode = index; // 0=remote mode, 1=localmode
+    ui->cBox_nodeSelect->setDisabled(isLocalMode);
 }
 
 
 void MainWindow::on_cBox_nodeSelect_currentIndexChanged(int index)
 {
     isServerMode = index; //0=Client node, 1=Server node.
+    if((!isLocalMode)&&(isServerMode))
+    {
+        startHttpServer();
+    }
+    else
+    {
+        stopHttpServer();
+    }
 }
 
 void MainWindow::initialMyAppleScriptList()
@@ -270,6 +292,8 @@ void MainWindow::runAppleScript(QString _qstr)
     p.write(_qstr.toUtf8());
     p.closeWriteChannel();
     p.waitForFinished();
+
+    qDebug() << _qstr << Qt::endl;
 }
 
 void MainWindow::controlActions(QString _qstr)
@@ -282,11 +306,12 @@ void MainWindow::controlActions(QString _qstr)
     {
         if(isServerMode)
         {
+            runAppleScript(_qstr);
             qDebug() << "Work in Remote Mode, as Server" << Qt::endl;
         }
         else
         {
-            qDebug() << "Work in Remote Mode, as Client" << Qt::endl;
+            qDebug() << "Work in Client Mode, as Client" << Qt::endl;
         }
 
     }
@@ -303,9 +328,32 @@ QString MainWindow::generateMyAppleScript(int _i)
             "end tell\n").
             arg(myAppleScriptKeyList.at(_i));
 
-    qDebug() << _return << Qt::endl;
+    //qDebug() << _return << Qt::endl;
 
     return _return;
 
+}
+
+void MainWindow::startHttpServer()
+{
+    myHttpServer = new QHttpServer(this);
+    myHttpServer->route("/", [this] ()
+    {
+        return "helloword!";
+    });
+
+    myHttpServer->route("/run/<arg>/", QHttpServerRequest::Method::Get, [this](const QString &firstArg, const QHttpServerRequest &request) {
+        qDebug() << "run" << firstArg;
+        this->controlActionByHttp(firstArg.toInt());
+        return "Ok";
+    });
+
+
+    myHttpServer->listen(QHostAddress::Any, 16250);
+}
+
+void MainWindow::stopHttpServer()
+{
+    myHttpServer->deleteLater();
 }
 

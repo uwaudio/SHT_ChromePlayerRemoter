@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QProcess>
+#include <QHttpServer>
+#include <QHttpServerRouter>
 
 #include <QMainWindow>
 
@@ -15,6 +17,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void controlActionByHttp(int);
+
 
 private slots:
 
@@ -66,6 +70,11 @@ private:
     void controlActions(QString);
 
     QString generateMyAppleScript(int);
+
+    QHttpServer* myHttpServer;
+
+    void startHttpServer();
+    void stopHttpServer();
 
 
 
