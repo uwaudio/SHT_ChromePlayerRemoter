@@ -1,5 +1,7 @@
 # SHT (SmartHomeTools) Chrome Player Remoter
 
+Add words for Test Modifier Branch
+
 ## Source
 
   After some initial test of Applescript control google chrome player in last repo [QtControlAppleScript_test](https://github.com/uwaudio/QtControlAppleScript_test). I decide open a new repo to continue the more features.
